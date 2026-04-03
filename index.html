@@ -152,12 +152,12 @@ body::before {
 #screen-tracker .hstat-lbl { font-size: 0.6rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
 #screen-tracker .progress-bar-wrap { width: 100%; height: 4px; background: #1e2d45; border-radius: 2px; margin-top: 8px; }
 #screen-tracker .progress-bar { height: 100%; background: linear-gradient(90deg, #f59e0b, #10b981); border-radius: 2px; transition: width 0.4s ease; }
-#screen-tracker .controls { background: #111827; border-bottom: 1px solid #1e2d45; padding: 12px 20px; position: sticky; top: 144px; z-index: 90; }
-#screen-tracker .controls-inner { max-width: 1400px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-#screen-tracker .search-box { background: #1a2235; border: 1px solid #1e2d45; color: #e2e8f0; padding: 8px 14px; border-radius: 8px; font-family: 'Barlow', sans-serif; font-size: 0.85rem; flex: 1; min-width: 180px; }
+#screen-tracker .controls { background: #111827; border-bottom: 1px solid #1e2d45; padding: 14px 20px; position: sticky; top: 150px; z-index: 90; }
+#screen-tracker .controls-inner { max-width: 1400px; margin: 0 auto; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+#screen-tracker .search-box { background: #1a2235; border: 1px solid #1e2d45; color: #e2e8f0; padding: 10px 14px; border-radius: 10px; font-family: 'Barlow', sans-serif; font-size: 1rem; flex: 1; min-width: 180px; }
 #screen-tracker .search-box:focus { outline: none; border-color: #f59e0b; }
 #screen-tracker .search-box::placeholder { color: #64748b; }
-#screen-tracker .filter-btn { background: #1a2235; border: 1px solid #1e2d45; color: #64748b; padding: 8px 14px; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; letter-spacing: 0.5px; transition: all 0.15s; }
+#screen-tracker .filter-btn { background: #1a2235; border: 1px solid #1e2d45; color: #94a3b8; padding: 10px 18px; border-radius: 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: all 0.15s; }
 #screen-tracker .filter-btn:hover { border-color: #f59e0b; color: #e2e8f0; }
 #screen-tracker .filter-btn.active { background: #f59e0b; border-color: #f59e0b; color: #000; }
 #screen-tracker .main { max-width: 1400px; margin: 0 auto; padding: 20px; }
@@ -531,7 +531,6 @@ body::before {
       <div class="tab" onclick="switchTab('especiales',this)">⭐ Especiales</div>
       <div class="tab" onclick="switchTab('resumen',this)">📊 Resumen</div>
       <div class="tab" onclick="switchTab('comprar',this)">🛒 Dónde Comprar</div>
-      <div class="tab" onclick="switchTab('scanner',this)">📷 Escáner</div>
     </div>
     <div id="tab-album" class="tab-content active"></div>
     <div id="tab-especiales" class="tab-content"><div id="especiales-content"></div></div>
@@ -553,20 +552,7 @@ body::before {
       </div>
       <div style="background:#111827;border:1px solid #1e2d45;border-radius:12px;padding:16px;margin-top:8px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:#f59e0b;margin-bottom:8px;">💡 ESTRATEGIA ÓPTIMA</div><div style="font-size:0.78rem;color:#64748b;line-height:1.7;"><b style="color:#e2e8f0">Paso 1 (~20€):</b> Megapack de Lanzamiento<br><b style="color:#e2e8f0">Paso 2 (~44€):</b> 1 caja de 50 sobres<br><b style="color:#e2e8f0">Paso 3 (gratis):</b> Intercambia repetidas en grupos de WhatsApp<br><b style="color:#e2e8f0">Paso 4 (~50€):</b> Cartas sueltas en worldtradingcards.com<br><b style="color:#10b981">Total estimado: ~120€</b></div></div>
     </div>
-    <div id="tab-scanner" class="tab-content">
-      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;margin-bottom:6px;color:#f59e0b">ESCÁNER DE CARTAS</h2>
-      <p style="font-size:0.8rem;color:#64748b;margin-bottom:20px;">Sube una foto de tus cartas y Claude las identificará automáticamente</p>
-      <div class="scan-area" onclick="document.getElementById('fileInput').click()">
-        <div style="font-size:2.5rem;margin-bottom:8px;">📷</div>
-        <div class="scan-title">Subir foto de tus cartas</div>
-        <div class="scan-desc">Coloca las cartas sobre una mesa bien iluminada y haz una foto.</div>
-        <div style="margin-top:12px;display:inline-block;background:#f59e0b;color:#000;padding:8px 20px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;">SELECCIONAR FOTO</div>
-      </div>
-      <input type="file" id="fileInput" accept="image/*" multiple onchange="handleScan(this)" style="display:none">
-      <div id="scan-preview" style="display:none"><div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;" id="scan-imgs"></div><button onclick="analyzeScan()" style="background:#f59e0b;color:#000;border:none;padding:10px 24px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.9rem;cursor:pointer;">🔍 ANALIZAR CON CLAUDE</button></div>
-      <div id="scan-result" style="margin-top:16px;"></div>
-    </div>
-  </div>
+</div>
   <div class="toast" id="toast"></div>
 </div>
 
@@ -581,6 +567,7 @@ const preloadedVersion = '2526_v10';
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  if (id === 'screen-tracker') setTimeout(fixStickyControls, 50);
   window.scrollTo(0,0);
 }
 
@@ -612,27 +599,57 @@ function loadNews() {
   }
   _renderNews(_staticNews);
   const feedUrl = 'https://davileti9.com/feed/';
-  const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(feedUrl);
-  fetch(proxy)
-    .then(r => r.json())
-    .then(json => {
-      if (!json.contents) throw new Error('no contents');
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(json.contents, 'application/xml');
-      const entries = Array.from(xml.querySelectorAll('entry')).slice(0, 4);
-      if (!entries.length) throw new Error('no entries');
-      const dynNews = entries.map(function(e) {
-        return {
-          badge: 'nuevo', label: 'Nuevo',
-          title: (e.querySelector('title') || {}).textContent || '',
-          desc: ((e.querySelector('summary') || e.querySelector('content') || {}).textContent || '')
-                .replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim().slice(0,130) + '...',
-          src: 'davileti9.com'
-        };
-      }).filter(function(n){ return n.title; });
-      if (dynNews.length) _renderNews(dynNews);
-    })
-    .catch(function(e){ console.log('Feed no disponible, usando noticias estáticas:', e.message); });
+  // Múltiples proxies CORS con fallback
+  const proxies = [
+    'https://api.allorigins.win/get?url=' + encodeURIComponent(feedUrl),
+    'https://corsproxy.io/?' + encodeURIComponent(feedUrl),
+    'https://api.codetabs.com/v1/proxy?quest=' + feedUrl,
+  ];
+
+  function parseRSS(xmlText) {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(xmlText, 'text/xml');
+    // Atom feed: <entry>, RSS: <item>
+    let entries = Array.from(xml.querySelectorAll('item')).slice(0, 4);
+    if (!entries.length) entries = Array.from(xml.querySelectorAll('entry')).slice(0, 4);
+    if (!entries.length) throw new Error('no items');
+    return entries.map(function(e) {
+      const title = (e.querySelector('title') || {}).textContent || '';
+      const rawDesc = (e.querySelector('description') || e.querySelector('summary') || e.querySelector('content') || {}).textContent || '';
+      const desc = rawDesc.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim().slice(0,130) + '...';
+      return { badge:'nuevo', label:'Nuevo', title, desc, src:'davileti9.com' };
+    }).filter(function(n){ return n.title; });
+  }
+
+  function tryProxy(index) {
+    if (index >= proxies.length) {
+      console.log('Feed: todos los proxies fallaron, usando noticias estáticas');
+      return;
+    }
+    const url = proxies[index];
+    // corsproxy.io y codetabs devuelven el texto directo, allorigins devuelve JSON
+    const isJson = url.includes('allorigins');
+    fetch(url, { signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return isJson ? r.json() : r.text(); })
+      .then(data => {
+        const xmlText = isJson ? (data.contents || '') : data;
+        if (!xmlText || xmlText.length < 100) throw new Error('respuesta vacía');
+        const news = parseRSS(xmlText);
+        if (news.length) {
+          window._newsCache = news;
+          window._newsCacheTime = Date.now();
+          _renderNews(news);
+        } else {
+          throw new Error('sin noticias');
+        }
+      })
+      .catch(function(e) {
+        console.log('Feed proxy ' + index + ' falló (' + e.message + '), probando siguiente...');
+        tryProxy(index + 1);
+      });
+  }
+
+  tryProxy(0);
 }
 
 
@@ -1224,33 +1241,7 @@ const CARD_IMGS_AXL2526 = {
   '355b':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/355BIS_ADRENALYN_2025_26_VILLARREAL.webp',
   '356b':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/356BIS_ADRENALYN_2025_26_VILLARREAL_TIN.jpg',
   '358b':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/358BIS_ADRENALYN_2025_26_VILLARREAL.webp',
-  '360b':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/360BIS_ADRENALYN_2025_26_VILLARREAL.webp'
-,
-  '31':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/SC_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '33':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EL_WILLIAMS_ADRENALYN_2025_26_FIRMADA.webp',
-  '36':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EL_WILLIAMS_ADRENALYN_2025_26_FIRMADA.webp',
-  '43':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EL_HANCKO_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '45':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/MOM_KOKE_ADRENALYN_2025-26.webp',
-  '50':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/NM6_ADRENALYN_2025-26_NEW_MASTER_62390ac5-5d02-4183-bba4-55abca17c5be.webp',
-  '63':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/ELDJ_ADRENALYN_2025_26_EDICION_LIMITADA_771cfecf-3857-4f08-a0d6-a5aeac7b008d.webp',
-  '65':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/PG_ADRENALYN_2025_26_PREMIUM_ORO.webp',
-  '66':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/PLAT_FERMIN_2026.webp',
-  '69':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/LY_ADRENALYN_2025_26_PREMIUM_ORO.webp',
-  '70':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/FT_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '86':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EL_ISCO_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '106':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/PLAT_IAGO_2026.webp',
-  '198':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/MOM_ETTA_ADRENALYN_2025-26.webp',
-  '205':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/ELH_ADRENALYN_2025_26_EDICION_LIMITADA_a24e23db-eed0-4f29-85c0-ef780eafb5de.webp',
-  '210':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/BG_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '211':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EL_GULER_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '214':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EXGDMB_ADRENALYN_2025-26_EXTRA_GOLD.webp',
-  '232':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/PLAT_MURIQI_2026.webp',
-  '264':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/PLAT_CAZORLA_2026.webp',
-  '284':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/MOM_AG_ADRENALYN_2025-26.webp',
-  '287':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/DF_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '304':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/ON_Adrenalyn_2025_Edicion_Limitada.webp',
-  '357':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EL_MIKA_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  '360':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EL_AYOZE_ADRENALYN_2025_26_FIRMADA.webp',
+  '360b':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/360BIS_ADRENALYN_2025_26_VILLARREAL.webp',
   'd408':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/408_ADRENALYN_2025-26_DIAMANTE_917a1686-82f6-4a69-b163-a7c7222bff4f.webp',
   'i422':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/422_ADRENALYN_2025-26_INFLUENCERS.webp',
   'sc454':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/454_ADRENALYN_2025-26_PROTAS.webp',
@@ -1382,8 +1373,7 @@ const CARD_IMGS_AXL2526 = {
   'mgk25_nu11':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EXGDMB_ADRENALYN_2025-26_EXTRA_GOLD.webp',
   'mgk25_el01':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/LY_ADRENALYN_2025_26_PREMIUM_ORO.webp',
   'mgk25_el03':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/BG_ADRENALYN_2025_26_EDICION_LIMITADA.webp',
-  'mgk25_el06':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EXGDMB_ADRENALYN_2025-26_EXTRA_GOLD.webp'
-,
+  'mgk25_el06':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/EXGDMB_ADRENALYN_2025-26_EXTRA_GOLD.webp',
   'v361':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/361_ADRENALYN_2025-26_VAMOS.webp',
   'v362':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/362_ADRENALYN_2025-26_VAMOS.webp',
   'v363':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/363_ADRENALYN_2025-26_VAMOS.webp',
@@ -1547,14 +1537,13 @@ const CARD_IMGS_AXL2526 = {
   'nm662':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/662_ADRENALYN_2025-26_SPECIAL.webp',
   'nm663':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/663_ADRENALYN_2025-26_SPECIAL.webp',
   '196b':'https://jaimegutierrezlosadaia.github.io/panini-imgs/axl2526/196BIS_ADRENALYN_2025_26_LEVANTE_TIN.jpg'
-,
-
 };
 window.CARD_IMGS = CARD_IMGS_AXL2526;
 const CATALOGUE = [
   { id:'adrenalyn-laliga', name:'Adrenalyn XL LaLiga', icon:'⚡', color:'#f59e0b', desc:'Card game oficial de LaLiga EA Sports · Panini', tags:['Trading Cards','LaLiga','Panini'],
     years:[
       { label:'2025-26', total:714, status:'active', stateKey:'adrenalynXL2526', trackerId:'adrenalyn-laliga-2526', img:AXL2526_IMG },
+      { label:'2024-25', total:705, status:'coming', stateKey:'adrenalynXL2425', trackerId:'adrenalyn-laliga-2425' },
     ]},
   { id:'megacracks', name:'Megacracks', icon:'💥', color:'#ef4444', desc:'MegaFichas de LaLiga EA Sports · Panini', tags:['Trading Cards','LaLiga','Panini'],
     years:[
@@ -2796,7 +2785,7 @@ function switchTab(tab, el) {
   document.getElementById('tab-'+tab).classList.add('active');
   if (tab === 'resumen') renderSummary();
   if (tab === 'especiales') { if (isMgk()) renderEspecialesMgkInto(); else renderEspeciales(); }
-  if (tab === 'album') { if (isMgk()) renderAlbumMgkInto(); else renderAlbum(); }
+  if (tab === 'album') { if (isMgk()) renderAlbumMgkInto(); else renderAlbum(); setTimeout(filterCards,0); }
 }
 
 function setSourceFilter(sel) {
@@ -2819,37 +2808,62 @@ function renderCurrentTab() {
   if (typeof renderEspeciales === 'function') renderEspeciales();
 }
 function setFilter(f, btn) {
-  // Reset source select
   const sel = document.getElementById('source-select');
   if (sel) sel.value = '';
   currentFilter = f;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  // Re-render if no cards visible yet
+  const cards = document.querySelectorAll('.card-item');
+  if (cards.length === 0) {
+    if (typeof renderAlbum === 'function') renderAlbum();
+    if (typeof renderEspeciales === 'function') renderEspeciales();
+  }
   filterCards();
 }
 
 function filterCards() {
-  const q = document.getElementById('search').value.toLowerCase();
+  const searchEl = document.getElementById('search');
+  const q = searchEl ? searchEl.value.toLowerCase() : '';
+  let count = 0;
   document.querySelectorAll('.card-item').forEach(el => {
     const id = el.id.replace('card-','');
-    const card = window._cardMap ? window._cardMap[id] : ALL_CARDS.find(c => c.id === id);
-    if (!card) return;
-    const matchQ = !q || card.name.toLowerCase().includes(q) || card.num.toLowerCase().includes(q);
+    const card = window._cardMap ? window._cardMap[id] : (ALL_CARDS || []).find(c => c.id === id);
+    if (!card) { el.style.display = 'none'; return; }
+    const matchQ = !q || card.name.toLowerCase().includes(q) || String(card.num).toLowerCase().includes(q);
     let matchF = true;
-    if (currentFilter === 'missing') matchF = !state[id];
-    else if (currentFilter === 'owned') matchF = state[id] === 1;
-    else if (currentFilter === 'damaged') matchF = state[id] === 2;
+    const cardState = state[id]; // undefined=missing, 1=owned, 2=damaged
+    if (currentFilter === 'missing') matchF = !cardState;
+    else if (currentFilter === 'owned') matchF = cardState === 1;
+    else if (currentFilter === 'damaged') matchF = cardState === 2;
     else if (currentFilter.startsWith('src:')) {
       const src = currentFilter.slice(4);
-      matchF = getCardSource(card.name) === src;
+      matchF = (typeof getCardSource === 'function' ? getCardSource(card.name) : '') === src;
     }
-    el.style.display = (matchQ && matchF) ? '' : 'none';
+    const show = matchQ && matchF;
+    el.style.display = show ? '' : 'none';
+    if (show) count++;
   });
   // Hide empty team sections
   document.querySelectorAll('.team-section').forEach(sec => {
     const visible = Array.from(sec.querySelectorAll('.card-item')).some(el => el.style.display !== 'none');
     sec.style.display = visible ? '' : 'none';
   });
+  // Show "no results" msg if needed
+  const main = document.querySelector('#screen-tracker .main');
+  let noRes = document.getElementById('no-filter-results');
+  if (count === 0 && currentFilter !== 'all') {
+    if (!noRes) {
+      noRes = document.createElement('div');
+      noRes.id = 'no-filter-results';
+      noRes.style.cssText = 'text-align:center;padding:40px;color:#64748b;font-size:0.9rem;';
+      noRes.textContent = '✅ ¡No hay cartas con este filtro!';
+      if (main) main.appendChild(noRes);
+    }
+    noRes.style.display = '';
+  } else if (noRes) {
+    noRes.style.display = 'none';
+  }
 }
 
 function saveHTMLFile() {
@@ -3065,7 +3079,7 @@ function restoreBackup(input) {
   reader.readAsText(file);
 }
 
-function initTracker() { loadState(); renderAlbum(); renderEspeciales(); updateHeader(); }
+function initTracker() { loadState(); renderAlbum(); renderEspeciales(); updateHeader(); setTimeout(fixStickyControls, 100); }
 
 
 // ══════════════════════════════════════
@@ -4374,6 +4388,20 @@ function renderEspecialesMgk() {
 }
 
   window.addEventListener("load", () => { loadNews(); });
+
+// Fix sticky controls position dynamically
+function fixStickyControls() {
+  const backBar = document.querySelector('.tracker-back-bar');
+  const header = document.querySelector('#screen-tracker .header');
+  const controls = document.querySelector('#screen-tracker .controls');
+  if (!controls) return;
+  const backH = backBar ? backBar.offsetHeight : 0;
+  const headerH = header ? header.offsetHeight : 0;
+  controls.style.top = (backH + headerH) + 'px';
+}
+window.addEventListener('resize', fixStickyControls);
+// Call after tracker opens
+const _origShowScreen = typeof showScreen === 'function' ? showScreen : null;
 </script>
 </body>
 </html>
